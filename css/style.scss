@@ -1,0 +1,269 @@
+/*variables*/
+$img : url("../images/img-logo.png") no-repeat;
+$main1: #e26d5d;
+$main2: #5d9fca;
+
+body {
+    background: url(../images/bg.jpg) no-repeat #182d40;
+    background-size: 100% auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.img {
+    background: $img;
+    text-indent: -9999px
+}
+
+.font {
+    font-family: "Just Another Hand", cursive;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    background: #fff;
+    box-shadow: 0 -1px #0002;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 100;
+
+    .title {
+        position: absolute;
+        top: 35px;
+        left: 204px;
+        width: 173px;
+        height: 60px;
+        background-position: 0 -453px
+    }
+
+    .emblem {
+        top: -70px;
+        left: 15px;
+        position: absolute;
+        width: 176px;
+        height: 196px;
+    }
+}
+
+//end:header
+
+#gnb {
+    font-size: 22px;
+    line-height: 40px;
+
+    ul {
+        display: flex;
+    }
+
+    li {
+        padding: 22px 11px 0;
+        border-left: 1px solid #ddd;
+    }
+
+    a {
+        color: #5e5e5e;
+        transition: all .2s ease-in-out;
+        border-bottom: 2px solid transparent;
+    }
+
+    a:hover {
+        color: $main1;
+        border-color: $main1;
+    }
+
+    a::before {
+        color: $main1;
+    }
+
+    .sub {
+        position: absolute;
+        bottom: 110px;
+        margin-left: -11px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .2s ease-in-out;
+
+        ul {
+            display: block;
+        }
+
+        li {
+            border: 0;
+            background: #fff;
+            padding: 7px 14px 3px;
+            margin-bottom: 1px;
+        }
+
+        a {
+            border: 0;
+        }
+
+        li:first-child {
+            border-radius: 3px 3px 0 0;
+        }
+    }
+
+    li:hover .sub {
+        bottom: 130px;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.counter {
+    ul {
+        counter-reset: menu; //menu라는 카운터를 생성함.
+    }
+
+    li {
+        counter-increment: menu; //li태그마다 menu 카운터 1씩 증가
+    }
+
+    li a::before {
+        content: '0' counter(menu)' ';
+    }
+
+    li li a::before {
+        content: counters(menu, ".")' '
+    }
+}
+
+//end:counter
+
+.sns {
+
+    ul {
+        display: flex;
+        padding: 28px 11px 11px;
+        border-left: 1px solid #ccc;
+        gap: 6px;
+    }
+
+    a {
+        width: 24px;
+        height: 24px;
+    }
+
+    .fb {
+        background-position: 0 -609px;
+    }
+
+    .fb:hover {
+        background-position: 0 -633px;
+    }
+
+    .tw {
+        background-position: 0 -561px;
+    }
+
+    .tw:hover {
+        background-position: 0 -585px;
+    }
+
+    .rss {
+        background-position: 0 -513px;
+    }
+
+    .rss:hover {
+        background-position: 0 -537px;
+    }
+}
+
+#language {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: $main1;
+    font: 14px/46px "Arial";
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 20px;
+    color: #eea79e;
+    border-radius: 2px 0 0;
+
+
+    ul {
+        display: flex;
+    }
+
+    li::after {
+        content: "/";
+        padding: 0 8px;
+    }
+
+    li:last-child::after {
+        display: none;
+    }
+
+    a {
+        color: #fff;
+    }
+}
+
+#main_view {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    .slide {
+        display: flex;
+    }
+
+    .view {
+        width: 100%;
+        height: 100vh;
+        background: no-repeat center center;
+        background-size: cover;
+        flex-shrink: 0;
+    }
+
+    .view1 {
+        background-image: url("../images/slide-1.jpg");
+    }
+
+    .view2 {
+        background-image: url("../images/slide-2.jpg");
+    }
+
+    .view3 {
+        background-image: url("../images/slide-3.jpg");
+    }
+
+    .pager {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+
+        span {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #000c;
+            margin-left: 4px;
+            box-shadow: 0 1px 1px #fff4, 0 1px 1px #0008 inset;
+            cursor: pointer;
+        }
+
+        .active::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $main1;
+            margin: 3px;
+        }
+    }
+}
