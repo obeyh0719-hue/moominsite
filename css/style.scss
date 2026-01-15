@@ -25,6 +25,15 @@ a {
     letter-spacing: -0.02em;
 }
 
+.arrow::after {
+    content: "";
+    background: $img 0 -727px;
+    display: inline-block;
+    width: 10px;
+    height: 17px;
+    margin-left: 10px;
+}
+
 header {
     position: fixed;
     bottom: 0;
@@ -52,6 +61,32 @@ header {
         position: absolute;
         width: 176px;
         height: 196px;
+    }
+
+    .menu_btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 46px;
+        background: #67a6ce;
+        border-left: 1px solid #3b87b7;
+        box-shadow: inset 1px 0 #95afd3;
+        display: none;
+    }
+
+    .menu_btn:hover {
+        background: #79afd3;
+    }
+
+    .menu_btn::after {
+        content: "";
+        display: block;
+        width: 26px;
+        height: 3px;
+        border-top: 9px double #fff;
+        border-bottom: 3px solid #fff;
+        margin: 15.5px 12px;
     }
 }
 
@@ -302,6 +337,42 @@ header {
             margin: 3px;
         }
     }
+
+    .btns {
+        position: absolute;
+        top: 20px;
+        left: 6%;
+        z-index: 1;
+        display: none;
+
+        a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #000;
+            transition: all .4;
+            cursor: pointer;
+        }
+
+        a:hover {
+            background: $main1;
+        }
+
+        a i {
+            display: block;
+            width: 10px;
+            height: 17px;
+            margin: 11.5px 15px;
+        }
+
+        .prev i {
+            background-position: 0 -745px;
+        }
+
+        .next i {
+            background-position: 0 -727px;
+        }
+    }
 }
 
 #notice {
@@ -361,6 +432,54 @@ header {
     }
 }
 
+#main_menu {
+    display: none;
+
+    a {
+        background: $main1;
+        color: #fff;
+        font-size: 22px;
+        display: block;
+        padding: 16px 6% 12px;
+        border-top: 1px solid #ea9488;
+        border-bottom: 1px solid #da4632;
+        transition: all .3s;
+    }
+
+    a:hover {
+        background: #e47566;
+    }
+
+    .sub a {
+        padding-left: 12%;
+    }
+
+    a::after {
+        float: right;
+    }
+
+}
+
+footer {
+    display: none;
+    font-family: "Arial";
+    color: #fff;
+    font-size: 3.5vW;
+    line-height: 2em;
+    text-align: center;
+    padding: 22px 6%;
+    background: url(../images/pattern3.png) #182d40;
+
+    .sns {
+        position: static;
+        padding: 0 0 20px;
+    }
+
+    .sns ul {
+        justify-content: center;
+    }
+}
+
 @media (max-width:1200px) {
     .sns {
         position: absolute;
@@ -387,11 +506,81 @@ header {
 
 @media(max-width:768px) {
     #main_view {
-        display: none;
+        height: 350px;
+
+        .view {
+            height: 350px;
+        }
+
+        .view h3 {
+            font-size: 32px;
+            bottom: 60px;
+        }
+
+        .view a {
+            bottom: 15px;
+        }
+
+        .view1 {
+            background-image: url(../images/slide-1-640x360.jpg);
+        }
+
+        .view2 {
+            background-image: url(../images/slide-2-640x360.jpg);
+        }
+
+        .view3 {
+            background-image: url(../images/slide-3-640x360.jpg);
+        }
+
+        .pager {
+            display: none;
+        }
+
+        .btns {
+            display: block;
+        }
+
     }
 
     #notice {
-        display: none;
+        position: relative;
+        display: block;
+        overflow: hidden;
+
+        h3 {
+            transform: rotate(-90deg) translateX(-100%);
+            width: 100%;
+            transform-origin: left top;
+            text-align: right;
+        }
+
+        h3::after {
+            display: none;
+        }
+
+        ul {
+            display: block;
+            margin-top: -46px;
+        }
+
+        li {
+            margin-left: 46px;
+            border-right: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    #main_menu {
+        display: block;
+    }
+
+    footer {
+        display: block;
     }
 
     header {
@@ -406,6 +595,10 @@ header {
             background-position: 0 -657px;
             top: 81px;
             left: 6%;
+        }
+
+        .menu_btn {
+            display: block;
         }
 
         .emblem {
@@ -437,4 +630,5 @@ header {
         color: #95c1d6;
         border-radius: 0;
     }
+
 }

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -72,29 +73,36 @@
                 <li><a href="#">sv</a></li>
             </ul>
         </div>
+
+        <a href="#" class="menu_btn"></a>
     </header>
 
     <section id="main_view" class="font">
         <div class="slide">
             <article class="view view1">
                 <h3>Muumilaaksosta Muumimuseo!</h3>
-                <a href="#">Siirry Muumimuseon sivulle!</a>
+                <a href="#" class="arrow">Siirry Muumimuseon sivulle!</a>
             </article>
             <article class="view view2">
                 <h3>Muumilaakso on sulkeutunut</h3>
-                <a href="#">lue lisää</a>
+                <a href="#" class="arrow">lue lisää</a>
             </article>
             <article class="view view3">
                 <h3>Muumilaakson jäähyvaiset</h3>
-                <a href="#">29.-30.10.2016</a>
+                <a href="#" class="arrow">29.-30.10.2016</a>
             </article>
         </div>
         <div class="pager">
         </div>
+
+        <div class="btns">
+            <a href="#" class="prev"><i class="img">이전</i></a>
+            <a href="#" class="next"><i class="img">다음</i></a>
+        </div>
     </section>
 
     <section id="notice">
-        <h3 class="font">Ajankohtasita</h3>
+        <h3 class="font arrow">Ajankohtasita</h3>
         <ul>
             <li><a href="#">Muumilaakso on sulkeutunut!<span>31.10.2016</span></a></li>
             <li><a href="#">Muumilaakson jäähyväiset 29.-30.10.2016<span>26.10.2016</span></a></li>
@@ -103,9 +111,16 @@
         </ul>
     </section>
 
+    <nav id="main_menu" class="font counter"></nav>
 
+    <footer>
+        <address>Picture &copy; 2016 Moomin Characters&trade; <br>
+            Content &copy; 2016 Muumilaakso <br> Tampereen kaupunki
+        </address>
+    </footer>
 
     <script src="./js/script.js"></script>
+
 </body>
 
 </html>
